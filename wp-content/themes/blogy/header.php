@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Untree.co">
-	<link rel="shortcut icon" href="favicon.png">
+	<!-- <link rel="shortcut icon" href="favicon.png"> -->
 
 	<meta name="description" content="" />
 	<meta name="keywords" content="bootstrap, bootstrap5" />
@@ -58,7 +58,21 @@
 								<span class="bi-search"></span>
 							</form>
 
-							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
+						<?php
+						// WordPress Menu
+						$nav_menu_args = array(
+							//'menu'				=> 'primary-menu', // (int|string|WP_Term) Desired menu. Accepts a menu ID, slug, name, or object.
+							'menu_class'		=> 'js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto', // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
+							'container'			=> 'ul', // (string) Whether to wrap the ul, and what to wrap it with. Default 'div'.
+							'container_class'	=> 'container-class', // (string) Class that is applied to the container. Default 'menu-{menu slug}-container'.
+							'theme_location'	=> 'primary', // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
+						);
+						wp_nav_menu( $nav_menu_args );
+						?>
+
+
+
+							<!-- <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
 								<li class="active"><a href="index.html">Home</a></li>
 								<li class="has-children">
 									<a href="category.html">Pages</a>
@@ -84,7 +98,8 @@
 								<li><a href="category.html">Culture</a></li>
 								<li><a href="category.html">Business</a></li>
 								<li><a href="category.html">Politics</a></li>
-							</ul>
+							</ul> -->
+
 						</div>
 						<div class="col-2 text-end">
 							<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">

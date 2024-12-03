@@ -22,3 +22,31 @@ add_post_type_support( 'excerpt', array() );
 // 		get_parent_theme_file_uri( '/css/style.css' )
 // 	);
 // }
+
+
+/**
+ * This is the main function to register navigation menus
+ *
+ * @return void
+ */
+
+
+/**
+ * This is the main function to register navigation menus
+ *
+ * @return void
+ */
+
+function arcade_register_nav_menus() {
+	// register_nav_menus(
+	// 	array(
+	// 		'primary_menu'          => __( 'Primary Menu', 'textdomain' ),
+	// 		'primary_menu_mobile'   => __( 'Primary Menu Mobile', 'textdomain' ),
+	// 		'footer_menu_site_info' => __( 'Footer Menu Site Info', 'textdomain' ),
+	// 	)
+	// );
+
+    register_nav_menu( 'primary', 'Primary Menu' );
+}
+
+add_action( 'after_setup_theme', 'arcade_register_nav_menus', 0 );
