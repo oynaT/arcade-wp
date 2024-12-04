@@ -32,7 +32,7 @@ function softuni_display_popular_posts( $number_of_posts = 3 ) {
  * @return int (Maybe) modified excerpt length.
  */
 function custom_excerpt_length( $length ) {
-    return 15;
+    return 20;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
@@ -55,3 +55,21 @@ function arcade_register_nav_menus() {
     //register_nav_menu( 'primary', 'Primary Menu' );
 }
 add_action( 'after_setup_theme', 'arcade_register_nav_menus', 0 );
+
+/**
+ * Display category in sidebar
+ */
+
+ function display_categories_in_sidebar() {
+    $categories = get_categories( array(
+        'orderby' => 'name',
+        'order'   => 'ASC'
+    ) );
+
+    echo '<ul class="categories">';
+    foreach ( $categories as $category ) {
+        echo '<li>
+		      <a href="' . get_category_link( $category->term_id ) . '">' . $category->name . ' <span>(' . $category->count . ')</span></a> </li>';
+    }
+    echo '</ul>';
+}

@@ -39,53 +39,48 @@
 						</ul>
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-4 -->
-				<div class="col-lg-4">
+			
+				<div class="col-lg-3">
 					<div class="widget">
 						<h3 class="mb-4">Recent Post Entry</h3>
 						<div class="post-entry-footer">
 							<ul>
-								<li>
-									<a href="">
-										<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_1_sq.jpg" alt="Image placeholder" class="me-4 rounded">
-										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-											<div class="post-meta">
-												<span class="mr-2">March 15, 2018 </span>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="">
-										<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_2_sq.jpg" alt="Image placeholder" class="me-4 rounded">
-										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-											<div class="post-meta">
-												<span class="mr-2">March 15, 2018 </span>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="">
-										<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_3_sq.jpg" alt="Image placeholder" class="me-4 rounded">
-										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-											<div class="post-meta">
-												<span class="mr-2">March 15, 2018 </span>
-											</div>
-										</div>
-									</a>
-								</li>
+								<?php
+								$recent_posts = new WP_Query( array(
+									'posts_per_page' => 3,
+									'post_status'    => 'publish', // published only
+									'orderby'        => 'date', // order by date
+									'order'          => 'asc' // the latest post 
+								) );
+
+								if ( $recent_posts->have_posts() ) :
+									while ( $recent_posts->have_posts() ) : $recent_posts->the_post(); ?>
+										<li>
+											<a href="<?php the_permalink(); ?>">
+												<?php
+												if ( has_post_thumbnail() ) {
+													the_post_thumbnail( 'thumbnail', array( 'class' => 'me-4 rounded', 'alt' => esc_attr( get_the_title() ) ) );
+												} ?>
+												<div class="text">
+													<h4><?php the_title(); ?></h4>
+													<div class="post-meta">
+														<span class="mr-2"><?php echo get_the_date(); ?></span>
+													</div>
+												</div>
+											</a>
+										</li>
+									<?php endwhile;
+									wp_reset_postdata();
+								else : ?>
+									<p>No post found.</p>
+								<?php endif; ?>
 							</ul>
 						</div>
-
-
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-4 -->
 			</div> <!-- /.row -->
 
-			<div class="row mt-5">
+			<div class="row mt-1">
 				<div class="col-12 text-center">
           <!-- 
               **==========

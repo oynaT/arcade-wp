@@ -19,7 +19,7 @@
 								<div>
               					<span class="date"><?php echo get_the_date(); ?> &bullet; <a href="#"><?php single_cat_title(); ?></a></span>
               						<h2><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
-              						<p><?php the_excerpt(); ?></p>
+              						<p><?php the_excerpt(20); ?></p>
               						<p><a href="<?php echo get_the_permalink(); ?>" class="btn btn-sm btn-outline-primary">Read More</a></p>
             					</div>
 								</div>
@@ -64,39 +64,7 @@
 						<h3 class="heading">Popular Posts</h3>
 						<div class="post-entry-sidebar">
 							<ul>
-								<li>
-									<a href="">
-										<img src="images/img_1_sq.jpg" alt="Image placeholder" class="me-4 rounded">
-										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-											<div class="post-meta">
-												<span class="mr-2">March 15, 2018 </span>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="">
-										<img src="images/img_2_sq.jpg" alt="Image placeholder" class="me-4 rounded">
-										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-											<div class="post-meta">
-												<span class="mr-2">March 15, 2018 </span>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="">
-										<img src="images/img_3_sq.jpg" alt="Image placeholder" class="me-4 rounded">
-										<div class="text">
-											<h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-											<div class="post-meta">
-												<span class="mr-2">March 15, 2018 </span>
-											</div>
-										</div>
-									</a>
-								</li>
+							<?php softuni_display_popular_posts( 3 ); ?>
 							</ul>
 						</div>
 					</div>
@@ -104,13 +72,13 @@
 
 					<div class="sidebar-box">
 						<h3 class="heading">Categories</h3>
-						<ul class="categories">
-							<li><a href="#">Food <span>(12)</span></a></li>
-							<li><a href="#">Travel <span>(22)</span></a></li>
-							<li><a href="#">Lifestyle <span>(37)</span></a></li>
-							<li><a href="#">Business <span>(42)</span></a></li>
-							<li><a href="#">Adventure <span>(14)</span></a></li>
-						</ul>
+						<?php 
+							if (function_exists('display_categories_in_sidebar')) {
+								display_categories_in_sidebar();
+							} else {
+								echo 'No categories found.';
+							}
+						?>
 					</div>
 					<!-- END sidebar-box -->
 

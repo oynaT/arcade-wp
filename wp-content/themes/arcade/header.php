@@ -1,5 +1,5 @@
 <!DOCTYPE html>
- <html class="no-js" <?php language_attributes(); ?>>
+ <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,7 +39,6 @@
 
 <body <?php body_class( 'test-class' ); ?>>
 
-
 	<div class="site-mobile-menu site-navbar-target">
 		<div class="site-mobile-menu-header">
 			<div class="site-mobile-menu-close">
@@ -55,7 +54,7 @@
 				<div class="site-navigation">
 					<div class="row g-0 align-items-center">
 						<div class="col-2">
-							<a href="<?php echo get_home_url( '/' ); ?>" class="logo m-0 float-start">Blogy<span class="text-primary">.</span></a>
+							<a href="<?php echo get_home_url( '/' ); ?>" class="logo m-0 float-start"><?php _e('Blogy', 'arcade');?><span class="text-primary">.</span></a>
 						</div>
 						<div class="col-8 text-center">
 							<form action="#" class="search-form d-inline-block d-lg-none">
@@ -70,13 +69,12 @@
 							'menu_class'		=> 'js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto',
 							'container'			=> 'ul', 
 							'container_class'	=> 'container-class', 
-							'theme_location'	=> 'primary', 
+							'theme_location'	=> 'primary_menu', 
 						);
-						wp_nav_menu( $menu_args );
+						if(has_nav_menu('primary_menu')){
+							wp_nav_menu( $menu_args );
+						}
 						?>
-
-
-
 							<!-- <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
 								<li class="active"><a href="index.html">Home</a></li>
 								<li class="has-children">
