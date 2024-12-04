@@ -1,42 +1,34 @@
 <?php get_header(); ?>
+<div class="hero overlay inner-page bg-primary py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-center text-center pt-5">
+        <div class="col-lg-6">
+          <h1 class="heading text-white mb-3" data-aos="fade-up"><?php echo get_the_title(); ?> </h1>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<section id="latest-blog" class="scrollspy-section bg-grey padding-large">
-	<div class="container">
+  <div class="section search-result-wrap">
+    <div class="container">
+      
+      <div class="row posts-entry">	  
+        <div class="col-lg-8">
+		<?php if ( have_posts() ) : ?>
 
-		<div class="row">
-			<div class="col">
-				<div class="section-header">
-					<h2 class="section-title"><?php echo get_the_archive_title(); ?></h2>
-				</div>
-			</div>
-
-		</div>
-
-		<div class="row">
-			<div class="col-md-12">
-				<?php if ( have_posts() ) : ?>
-					<div class="post-grid">
-						<div class="row">
 							<?php while( have_posts() ) : the_post(); ?>
-								<div class="col-md-4">
-
-								<article id="post-id-<?php the_ID(); ?>" <?php post_class( 'post-item' ) ?>>
-
-										<?php if ( has_post_thumbnail() ) : ?>
-											<figure>
-												<a href="<?php echo get_the_permalink(); ?>" class="image-hvr-effect">
-													<?php the_post_thumbnail( 'post-thumbnail', [ 'class' => 'post-image', 'title' => 'Feature image' ] ); ?>
-												</a>
-											</figure>
-										<?php endif; ?>
-
-										<div class="post-content">
-											<div class="meta-date"><?php echo get_the_date(); ?></div>
-											<h3 class="post-title"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
-											<p><?php the_excerpt(); ?></p>
-										</div>
-									</article>
-
+							<div id="post-id-<?php the_ID(); ?>" <?php post_class( 'blog-entry d-flex blog-entry-search-item' ) ?>
+								<?php if ( has_post_thumbnail() ) : ?>
+									<a href="<?php echo get_the_permalink(); ?>" class="img-link me-4">
+										<?php the_post_thumbnail( 'post-thumbnail', [ 'class' => 'img-fluid', 'title' => 'Feature image' ] ); ?>
+									</a>
+								<?php endif; ?>
+								<div>
+              					<span class="date"><?php echo get_the_date(); ?> &bullet; <a href="#">Business</a></span>
+              						<h2><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h2>
+              						<p><?php the_excerpt(); ?></p>
+              						<p><a href="<?php echo get_the_permalink(); ?>" class="btn btn-sm btn-outline-primary">Read More</a></p>
+            					</div>
 								</div>
 							<?php endwhile; ?>
 						</div>
@@ -44,13 +36,72 @@
 				<?php else : ?>
 					No posts to be shown.
 				<?php endif; ?>
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col">
+          <!-- <div class="blog-entry d-flex blog-entry-search-item">
+            <a href="single.html" class="img-link me-4">
+              <img src="images/img_1_sq.jpg" alt="Image" class="img-fluid">
+            </a>
+            <div>
+              <span class="date">Apr. 14th, 2022 &bullet; <a href="#">Business</a></span>
+              <h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
+              <p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
+            </div>
+          </div> -->
 
-				<?php
+          <!-- <div class="blog-entry d-flex blog-entry-search-item">
+            <a href="single.html" class="img-link me-4">
+              <img src="images/img_2_sq.jpg" alt="Image" class="img-fluid">
+            </a>
+            <div>
+              <span class="date">Apr. 14th, 2022 &bullet; <a href="#">Business</a></span>
+              <h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
+              <p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
+            </div>
+          </div>
+
+          <div class="blog-entry d-flex blog-entry-search-item">
+            <a href="single.html" class="img-link me-4">
+              <img src="images/img_3_sq.jpg" alt="Image" class="img-fluid">
+            </a>
+            <div>
+              <span class="date">Apr. 14th, 2022 &bullet; <a href="#">Business</a></span>
+              <h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
+              <p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
+            </div>
+          </div>
+
+          <div class="blog-entry d-flex blog-entry-search-item">
+            <a href="single.html" class="img-link me-4">
+              <img src="images/img_4_sq.jpg" alt="Image" class="img-fluid">
+            </a>
+            <div>
+              <span class="date">Apr. 14th, 2022 &bullet; <a href="#">Business</a></span>
+              <h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
+              <p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
+            </div>
+          </div>
+
+          <div class="blog-entry d-flex blog-entry-search-item">
+            <a href="single.html" class="img-link me-4">
+              <img src="images/img_5_sq.jpg" alt="Image" class="img-fluid">
+            </a>
+            <div>
+              <span class="date">Apr. 14th, 2022 &bullet; <a href="#">Business</a></span>
+              <h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
+              <p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
+            </div>
+          </div> -->
+
+          <div class="row text-start pt-5 border-top">
+            <div class="col-md-12">
+              <div class="custom-pagination">
+
+			  <?php
 				the_posts_pagination( array(
 					'mid_size'  => 2,
 					'prev_text' => __( 'Previous', 'textdomain' ),
@@ -58,14 +109,101 @@
 				) );
 				?>
 
-				<!-- <div class="btn-wrap align-center">
-					<a href="#" class="btn btn-xlarge btn-accent btn-rounded">View all blog</a>
-				</div> -->
+                <!-- <span>1</span>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <span>...</span>
+                <a href="#">15</a> -->
+              </div>
+            </div>
+          </div>
 
-			</div>
-		</div>
+        </div>
 
-	</div>
-</section>
+        <div class="col-lg-4 sidebar">
 
-<?php get_footer(); ?>
+          <div class="sidebar-box search-form-wrap mb-4">
+            <form action="#" class="sidebar-search-form">
+              <span class="bi-search"></span>
+              <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
+            </form>
+          </div>
+          <!-- END sidebar-box -->
+          <div class="sidebar-box">
+            <h3 class="heading">Popular Posts</h3>
+            <div class="post-entry-sidebar">
+              <ul>
+                <li>
+                  <a href="">
+                    <img src="images/img_1_sq.jpg" alt="Image placeholder" class="me-4 rounded">
+                    <div class="text">
+                      <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                      <div class="post-meta">
+                        <span class="mr-2">March 15, 2018 </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="images/img_2_sq.jpg" alt="Image placeholder" class="me-4 rounded">
+                    <div class="text">
+                      <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                      <div class="post-meta">
+                        <span class="mr-2">March 15, 2018 </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="images/img_3_sq.jpg" alt="Image placeholder" class="me-4 rounded">
+                    <div class="text">
+                      <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                      <div class="post-meta">
+                        <span class="mr-2">March 15, 2018 </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- END sidebar-box -->
+
+          <div class="sidebar-box">
+            <h3 class="heading">Categories</h3>
+            <ul class="categories">
+              <li><a href="#">Food <span>(12)</span></a></li>
+              <li><a href="#">Travel <span>(22)</span></a></li>
+              <li><a href="#">Lifestyle <span>(37)</span></a></li>
+              <li><a href="#">Business <span>(42)</span></a></li>
+              <li><a href="#">Adventure <span>(14)</span></a></li>
+            </ul>
+          </div>
+          <!-- END sidebar-box -->
+
+          <div class="sidebar-box">
+            <h3 class="heading">Tags</h3>
+            <ul class="tags">
+              <li><a href="#">Travel</a></li>
+              <li><a href="#">Adventure</a></li>
+              <li><a href="#">Food</a></li>
+              <li><a href="#">Lifestyle</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Freelancing</a></li>
+              <li><a href="#">Travel</a></li>
+              <li><a href="#">Adventure</a></li>
+              <li><a href="#">Food</a></li>
+              <li><a href="#">Lifestyle</a></li>
+              <li><a href="#">Business</a></li>
+              <li><a href="#">Freelancing</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php get_footer(); ?>

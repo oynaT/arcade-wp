@@ -60,14 +60,14 @@
 
 						<?php
 						// WordPress Menu
-						$nav_menu_args = array(
-							//'menu'				=> 'primary-menu', // (int|string|WP_Term) Desired menu. Accepts a menu ID, slug, name, or object.
-							'menu_class'		=> 'js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto', // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
-							'container'			=> 'ul', // (string) Whether to wrap the ul, and what to wrap it with. Default 'div'.
-							'container_class'	=> 'container-class', // (string) Class that is applied to the container. Default 'menu-{menu slug}-container'.
-							'theme_location'	=> 'primary', // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
+						$menu_args = array(
+							'menu'				=> 'primary-menu', 
+							'menu_class'		=> 'js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto',
+							'container'			=> 'ul', 
+							'container_class'	=> 'container-class', 
+							'theme_location'	=> 'primary', 
 						);
-						wp_nav_menu( $nav_menu_args );
+						wp_nav_menu( $menu_args );
 						?>
 
 

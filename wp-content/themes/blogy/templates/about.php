@@ -1,3 +1,10 @@
+<?php
+/**
+ * Template Name: About
+ */
+?>
+
+<?php get_header(); ?>
 
 	<div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('images/hero_5.jpg');">
 		<div class="container">
@@ -120,8 +127,6 @@
 		</div>
 	</div>
 
-
-
 	<div class="section">
 		<div class="container">
 			<div class="row justify-content-between">
@@ -169,3 +174,4 @@
 			</div>
 		</div>
 	</div>
+<?php get_footer(); ?>
