@@ -21,7 +21,12 @@
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/tiny-slider.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/aos.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/glightbox.min.css">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
+	<!-- <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css"> -->
+
+	<!-- <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootsrap.css">
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootsrap-grid.css">
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootsrap-reboot.css">
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap-utilities.css"> -->
 
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/flatpickr.min.css">
 

@@ -115,7 +115,6 @@
 
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/flatpickr.min.js"></script>
 
-
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/aos.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/glightbox.min.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/navbar.js"></script>

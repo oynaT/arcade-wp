@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <div class="hero overlay inner-page bg-primary py-5">
     <div class="container">
       <div class="row align-items-center justify-content-center text-center pt-5">
@@ -17,7 +18,7 @@
 		<?php if ( have_posts() ) : ?>
 
 							<?php while( have_posts() ) : the_post(); ?>
-							<div id="post-id-<?php the_ID(); ?>" <?php post_class( 'blog-entry d-flex blog-entry-search-item' ) ?>
+							<div id="post-id-<?php the_ID(); ?>" <?php post_class( 'blog-entry d-flex blog-entry-search-item' ) ?>>
 								<?php if ( has_post_thumbnail() ) : ?>
 									<a href="<?php echo get_the_permalink(); ?>" class="img-link me-4">
 										<?php the_post_thumbnail( 'post-thumbnail', [ 'class' => 'img-fluid', 'title' => 'Feature image' ] ); ?>
@@ -37,75 +38,15 @@
 					No posts to be shown.
 				<?php endif; ?>
 
-          <!-- <div class="blog-entry d-flex blog-entry-search-item">
-            <a href="single.html" class="img-link me-4">
-              <img src="images/img_1_sq.jpg" alt="Image" class="img-fluid">
-            </a>
-            <div>
-              <span class="date">Apr. 14th, 2022 &bullet; <a href="#">Business</a></span>
-              <h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
-              <p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
-            </div>
-          </div> -->
-
-          <!-- <div class="blog-entry d-flex blog-entry-search-item">
-            <a href="single.html" class="img-link me-4">
-              <img src="images/img_2_sq.jpg" alt="Image" class="img-fluid">
-            </a>
-            <div>
-              <span class="date">Apr. 14th, 2022 &bullet; <a href="#">Business</a></span>
-              <h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
-              <p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
-            </div>
-          </div>
-
-          <div class="blog-entry d-flex blog-entry-search-item">
-            <a href="single.html" class="img-link me-4">
-              <img src="images/img_3_sq.jpg" alt="Image" class="img-fluid">
-            </a>
-            <div>
-              <span class="date">Apr. 14th, 2022 &bullet; <a href="#">Business</a></span>
-              <h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
-              <p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
-            </div>
-          </div>
-
-          <div class="blog-entry d-flex blog-entry-search-item">
-            <a href="single.html" class="img-link me-4">
-              <img src="images/img_4_sq.jpg" alt="Image" class="img-fluid">
-            </a>
-            <div>
-              <span class="date">Apr. 14th, 2022 &bullet; <a href="#">Business</a></span>
-              <h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
-              <p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
-            </div>
-          </div>
-
-          <div class="blog-entry d-flex blog-entry-search-item">
-            <a href="single.html" class="img-link me-4">
-              <img src="images/img_5_sq.jpg" alt="Image" class="img-fluid">
-            </a>
-            <div>
-              <span class="date">Apr. 14th, 2022 &bullet; <a href="#">Business</a></span>
-              <h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
-              <p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
-            </div>
-          </div> -->
-
           <div class="row text-start pt-5 border-top">
             <div class="col-md-12">
               <div class="custom-pagination">
 
 			  <?php
 				the_posts_pagination( array(
-					'mid_size'  => 2,
-					'prev_text' => __( 'Previous', 'textdomain' ),
-					'next_text' => __( 'Next', 'textdomain' ),
+					'mid_size'  => 4,
+					'prev_text' => __( '<-', 'arcade' ),
+					'next_text' => __( '->', 'arcade' ),
 				) );
 				?>
 
