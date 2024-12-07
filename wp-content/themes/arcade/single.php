@@ -37,10 +37,7 @@ get_header();
           </div>
           <div class="pt-4" style="display:flex">
             Categories: <?php the_category(); ?> &nbsp;
-            <!-- <a href="#">Food</a>, <a href="#">Travel</a>   -->
             <?php the_tags(); ?>
-            <!--  <a href="#">#manila</a>, <a href="#">#asia</a> -->
-            
           </div>
         </div>
         <?php endwhile; ?>
@@ -52,7 +49,7 @@ get_header();
             <h3 class="heading">Popular Posts</h3>
             <div class="post-entry-sidebar">
               <ul>
-              <?php softuni_display_popular_posts( 3 ); ?>
+              <?php display_popular_posts( 3 ); ?>
               </ul>
             </div>
           </div>
@@ -98,42 +95,10 @@ get_header();
 <section class="section posts-entry posts-entry-sm bg-light">
     <div class="container">
         <div class="row mb-4">
-            <div class="col-12 text-uppercase text-black">More Blog Posts</div>
+            <div class="col-12 text-uppercase text-black">More Blog Posts for this category</div>
         </div>
         <div class="row">
-            <?php
-            $categories = wp_get_post_categories( get_the_ID() );
-            $args = array(
-                'category__in'   => $categories, // post from the same category
-                'posts_per_page' => 4, // number of posts
-                'post__not_in'   => array( get_the_ID() ), // disabled current post
-                'orderby'        => 'date',
-                'order'          => 'DESC'
-            );
-
-            $related_posts = new WP_Query( $args );
-
-            if ( $related_posts->have_posts() ) :
-                while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="blog-entry">
-                            <a href="<?php the_permalink(); ?>" class="img-link">
-                                <?php 
-                                if ( has_post_thumbnail() ) {
-                                    the_post_thumbnail( 'medium', [ 'class' => 'img-fluid' ]); 
-                                } ?>
-                            </a>
-                            <span class="date"><?php echo get_the_date(); ?></span>
-                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                            <p><?php echo wp_trim_words( get_the_excerpt(), 15, '...' ); ?></p>
-                            <p><a href="<?php the_permalink(); ?>" class="read-more">Continue Reading</a></p>
-                        </div>
-                    </div>
-                <?php endwhile;
-                wp_reset_postdata();
-                else : ?>
-                <p>Not other post from this category</p>
-            <?php endif; ?>
+            <?php get_template_part( 'partials/more-blog-posts' , 'section' ); ?>  
         </div>
     </div>
 </section>

@@ -20,8 +20,30 @@ add_action( 'wp_enqueue_scripts', 'arcade_enqueue_assets' );
 /**
  * Display popular post number.
   */
-function softuni_display_popular_posts( $number_of_posts = 3 ) {
-    include 'popular-posts.php';
+function display_popular_posts( $number_of_posts = 3 ) {
+
+    $template_path = locate_template('partials/popular-posts.php');
+    if ( ! $template_path ) {
+        echo '<p>Template file not found.</p>';
+        return;
+    }
+    // Get the template
+    include $template_path;
+}
+/**
+ * Display posts by category name Business or Culture.
+  */
+function display_posts_by_category_name ( $categories = ['Uncategorized'] ) {
+
+    $template_path = locate_template('partials/sections-culture-business-posts.php');
+    if ( ! $template_path ) {
+        echo '<p>Template file not found.</p>';
+        return;
+    }
+
+    // Get the tempate
+    include $template_path;
+   //include 'sections-culture-business-posts.php';
 }
 
 

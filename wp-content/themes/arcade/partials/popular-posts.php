@@ -1,4 +1,8 @@
 <?php
+/**
+ * Section Populate Post
+ */
+
 $populate_posts_args = array(
     'post_type'         => 'post',
     'post_status'       => 'publish',
@@ -15,7 +19,6 @@ $populate_posts_query = new WP_Query( $populate_posts_args );
                 <li>
                 <a href="<?php echo get_the_permalink(); ?>">
                    <?php the_post_thumbnail( 'thumbnail', [ 'class' => 'me-4 rounded', 'title' => 'Feature image' , 'alt' => 'Image placeholder' ] ); ?>
-            
                     <div class="text">
                       <h4><?php echo get_the_title(); ?></h4>
                       <div class="post-meta">

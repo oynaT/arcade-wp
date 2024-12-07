@@ -5,7 +5,6 @@
 ?>
 
 <?php get_header(); ?>
-<h2>Home PAGE TEMPLATE</h2>
 	<!-- Start retroy layout blog posts -->
 	<section class="section bg-light">
 		<div class="container">
@@ -57,7 +56,7 @@
 
 						<div class="text">
 							<span class="date">Apr. 14th, 2022</span>
-							<h2>Thought you loved Python? Wait until you meet Rust</h2>
+							<h2>Thought you loved Python? Wait until you meet Rust 1</h2>
 						</div>
 					</a>
 				</div>
@@ -73,10 +72,11 @@
 				<div class="col-sm-6">
 					<h2 class="posts-entry-title">Business</h2>
 				</div>
-				<div class="col-sm-6 text-sm-end"><a href="category.html" class="read-more">View All</a></div>
+				<div class="col-sm-6 text-sm-end"><a href="/arcade/category/business" class="read-more">View All</a></div>
 			</div>
 			<div class="row g-3">
-				<div class="col-md-9">
+			<?php display_posts_by_category_name(['Business']); ?>
+				<!-- <div class="col-md-9">
 					<div class="row g-3">
 						<div class="col-md-6">
 							<div class="blog-entry">
@@ -84,7 +84,7 @@
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_1_sq.jpg" alt="Image" class="img-fluid">
 								</a>
 								<span class="date">Apr. 14th, 2022</span>
-								<h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
+								<h2><a href="single.html">Thought you loved Python? Wait until you meet Rust 2</a></h2>
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
 								<p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
 							</div>
@@ -125,7 +125,7 @@
 							<p><a href="#" class="read-more">Continue Reading</a></p>
 						</li>
 					</ul>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -134,52 +134,9 @@
 	<!-- Start posts-entry -->
 	<section class="section posts-entry posts-entry-sm bg-light">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-lg-3">
-					<div class="blog-entry">
-						<a href="single.html" class="img-link">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_1_horizontal.jpg" alt="Image" class="img-fluid">
-						</a>
-						<span class="date">Apr. 14th, 2022</span>
-						<h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						<p><a href="#" class="read-more">Continue Reading</a></p>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3">
-					<div class="blog-entry">
-						<a href="single.html" class="img-link">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_2_horizontal.jpg" alt="Image" class="img-fluid">
-						</a>
-						<span class="date">Apr. 14th, 2022</span>
-						<h2><a href="single.html">Startup vs corporate: What job suits you best?</a></h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						<p><a href="#" class="read-more">Continue Reading</a></p>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3">
-					<div class="blog-entry">
-						<a href="single.html" class="img-link">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_3_horizontal.jpg" alt="Image" class="img-fluid">
-						</a>
-						<span class="date">Apr. 14th, 2022</span>
-						<h2><a href="single.html">UK sees highest inflation in 30 years</a></h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						<p><a href="#" class="read-more">Continue Reading</a></p>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3">
-					<div class="blog-entry">
-						<a href="single.html" class="img-link">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_4_horizontal.jpg" alt="Image" class="img-fluid">
-						</a>
-						<span class="date">Apr. 14th, 2022</span>
-						<h2><a href="single.html">Don’t assume your user data in the cloud is safe</a></h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-						<p><a href="#" class="read-more">Continue Reading</a></p>
-					</div>
-				</div>
-			</div>
+			 <div class="row">
+				<?php get_template_part( 'partials/more-blog-posts' , 'section'  ); ?> 
+			</div> 		
 		</div>
 	</section>
 	<!-- End posts-entry -->
@@ -191,10 +148,11 @@
 				<div class="col-sm-6">
 					<h2 class="posts-entry-title">Culture</h2>
 				</div>
-				<div class="col-sm-6 text-sm-end"><a href="category.html" class="read-more">View All</a></div>
+				<div class="col-sm-6 text-sm-end"><a href="/arcade/category/culture" class="read-more">View All</a></div>
 			</div>
 			<div class="row g-3">
-				<div class="col-md-9 order-md-2">
+			<?php display_posts_by_category_name(['Culture']); ?>
+				<!-- <div class="col-md-9 order-md-2">
 					<div class="row g-3">
 						<div class="col-md-6">
 							<div class="blog-entry">
@@ -202,7 +160,7 @@
 									<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_1_sq.jpg" alt="Image" class="img-fluid">
 								</a>
 								<span class="date">Apr. 14th, 2022</span>
-								<h2><a href="single.html">Thought you loved Python? Wait until you meet Rust</a></h2>
+								<h2><a href="single.html">Thought you loved Python? Wait until you meet Rust 4</a></h2>
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nobis ea quis inventore vel voluptas.</p>
 								<p><a href="single.html" class="btn btn-sm btn-outline-primary">Read More</a></p>
 							</div>
@@ -243,7 +201,7 @@
 							<p><a href="#" class="read-more">Continue Reading</a></p>
 						</li>
 					</ul>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -255,179 +213,14 @@
 				<div class="col-sm-6">
 					<h2 class="posts-entry-title">Politics</h2>
 				</div>
-				<div class="col-sm-6 text-sm-end"><a href="category.html" class="read-more">View All</a></div>
+				<div class="col-sm-6 text-sm-end"><a href="/arcade/author/arcade/" class="read-more">View All</a></div>
 			</div>
-
 			<div class="row">
-				<div class="col-lg-4 mb-4">
-					<div class="post-entry-alt">
-						<a href="single.html" class="img-link"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_7_horizontal.jpg" alt="Image" class="img-fluid"></a>
-						<div class="excerpt">
-							
-
-							<h2><a href="single.html">Startup vs corporate: What job suits you best?</a></h2>
-							<div class="post-meta align-items-center text-left clearfix">
-								<figure class="author-figure mb-0 me-3 float-start"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-								<span class="d-inline-block mt-1">By <a href="#">David Anderson</a></span>
-								<span>&nbsp;-&nbsp; July 19, 2019</span>
-							</div>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-							<p><a href="#" class="read-more">Continue Reading</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 mb-4">
-					<div class="post-entry-alt">
-						<a href="single.html" class="img-link"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_6_horizontal.jpg" alt="Image" class="img-fluid"></a>
-						<div class="excerpt">
-							
-
-							<h2><a href="single.html">Startup vs corporate: What job suits you best?</a></h2>
-							<div class="post-meta align-items-center text-left clearfix">
-								<figure class="author-figure mb-0 me-3 float-start"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/person_2.jpg" alt="Image" class="img-fluid"></figure>
-								<span class="d-inline-block mt-1">By <a href="#">David Anderson</a></span>
-								<span>&nbsp;-&nbsp; July 19, 2019</span>
-							</div>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-							<p><a href="#" class="read-more">Continue Reading</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 mb-4">
-					<div class="post-entry-alt">
-						<a href="single.html" class="img-link"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_5_horizontal.jpg" alt="Image" class="img-fluid"></a>
-						<div class="excerpt">
-							
-
-							<h2><a href="single.html">Startup vs corporate: What job suits you best?</a></h2>
-							<div class="post-meta align-items-center text-left clearfix">
-								<figure class="author-figure mb-0 me-3 float-start"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/person_3.jpg" alt="Image" class="img-fluid"></figure>
-								<span class="d-inline-block mt-1">By <a href="#">David Anderson</a></span>
-								<span>&nbsp;-&nbsp; July 19, 2019</span>
-							</div>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-							<p><a href="#" class="read-more">Continue Reading</a></p>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="col-lg-4 mb-4">
-					<div class="post-entry-alt">
-						<a href="single.html" class="img-link"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_4_horizontal.jpg" alt="Image" class="img-fluid"></a>
-						<div class="excerpt">
-							
-
-							<h2><a href="single.html">Startup vs corporate: What job suits you best?</a></h2>
-							<div class="post-meta align-items-center text-left clearfix">
-								<figure class="author-figure mb-0 me-3 float-start"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/person_4.jpg" alt="Image" class="img-fluid"></figure>
-								<span class="d-inline-block mt-1">By <a href="#">David Anderson</a></span>
-								<span>&nbsp;-&nbsp; July 19, 2019</span>
-							</div>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-							<p><a href="#" class="read-more">Continue Reading</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 mb-4">
-					<div class="post-entry-alt">
-						<a href="single.html" class="img-link"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_3_horizontal.jpg" alt="Image" class="img-fluid"></a>
-						<div class="excerpt">
-							
-
-							<h2><a href="single.html">Startup vs corporate: What job suits you best?</a></h2>
-							<div class="post-meta align-items-center text-left clearfix">
-								<figure class="author-figure mb-0 me-3 float-start"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/person_5.jpg" alt="Image" class="img-fluid"></figure>
-								<span class="d-inline-block mt-1">By <a href="#">David Anderson</a></span>
-								<span>&nbsp;-&nbsp; July 19, 2019</span>
-							</div>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-							<p><a href="#" class="read-more">Continue Reading</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 mb-4">
-					<div class="post-entry-alt">
-						<a href="single.html" class="img-link"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_2_horizontal.jpg" alt="Image" class="img-fluid"></a>
-						<div class="excerpt">
-							
-
-							<h2><a href="single.html">Startup vs corporate: What job suits you best?</a></h2>
-							<div class="post-meta align-items-center text-left clearfix">
-								<figure class="author-figure mb-0 me-3 float-start"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/person_4.jpg" alt="Image" class="img-fluid"></figure>
-								<span class="d-inline-block mt-1">By <a href="#">David Anderson</a></span>
-								<span>&nbsp;-&nbsp; July 19, 2019</span>
-							</div>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-							<p><a href="#" class="read-more">Continue Reading</a></p>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="col-lg-4 mb-4">
-					<div class="post-entry-alt">
-						<a href="single.html" class="img-link"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_1_horizontal.jpg" alt="Image" class="img-fluid"></a>
-						<div class="excerpt">
-							
-
-							<h2><a href="single.html">Startup vs corporate: What job suits you best?</a></h2>
-							<div class="post-meta align-items-center text-left clearfix">
-								<figure class="author-figure mb-0 me-3 float-start"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/person_3.jpg" alt="Image" class="img-fluid"></figure>
-								<span class="d-inline-block mt-1">By <a href="#">David Anderson</a></span>
-								<span>&nbsp;-&nbsp; July 19, 2019</span>
-							</div>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-							<p><a href="#" class="read-more">Continue Reading</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 mb-4">
-					<div class="post-entry-alt">
-						<a href="single.html" class="img-link"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_4_horizontal.jpg" alt="Image" class="img-fluid"></a>
-						<div class="excerpt">
-							
-							
-
-							<h2><a href="single.html">Startup vs corporate: What job suits you best?</a></h2>
-							<div class="post-meta align-items-center text-left clearfix">
-								<figure class="author-figure mb-0 me-3 float-start"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/person_2.jpg" alt="Image" class="img-fluid"></figure>
-								<span class="d-inline-block mt-1">By <a href="#">David Anderson</a></span>
-								<span>&nbsp;-&nbsp; July 19, 2019</span>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-							<p><a href="#" class="read-more">Continue Reading</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 mb-4">
-					<div class="post-entry-alt">
-						<a href="single.html" class="img-link"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img_3_horizontal.jpg" alt="Image" class="img-fluid"></a>
-						<div class="excerpt">
-							
-							
-
-							<h2><a href="single.html">Startup vs corporate: What job suits you best?</a></h2>
-							<div class="post-meta align-items-center text-left clearfix">
-								<figure class="author-figure mb-0 me-3 float-start"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/person_5.jpg" alt="Image" class="img-fluid"></figure>
-								<span class="d-inline-block mt-1">By <a href="#">David Anderson</a></span>
-								<span>&nbsp;-&nbsp; July 19, 2019</span>
-							</div>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
-							<p><a href="#" class="read-more">Continue Reading</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
 			
+			<?php get_template_part('partials/section-politics-posts' , 'section'); ?>
+			
+		</div>
+		
 		</div>
 	</section>
 
@@ -438,12 +231,14 @@
 				<div class="col-sm-6">
 					<h2 class="posts-entry-title">Travel</h2>
 				</div>
-				<div class="col-sm-6 text-sm-end"><a href="category.html" class="read-more">View All</a></div>
+				<div class="col-sm-6 text-sm-end"><a href="/arcade/author/travel/" class="read-more">View All</a></div>
 			</div>
 
 			<div class="row align-items-stretch retro-layout-alt">
 
-				<div class="col-md-5 order-md-2">
+			<?php get_template_part('partials/section-travel-posts', 'section'); ?>
+
+				<!-- <div class="col-md-5 order-md-2">
 					<a href="single.html" class="hentry img-1 h-100 gradient">
 						<div class="featured-img" style="background-image: url('http://localhost/arcade/wp-content/themes/blogy/images/img_2_vertical.jpg');"></div>
 						<div class="text">
@@ -480,12 +275,15 @@
 						</a>
 					</div>  
 
-				</div>
+				</div> -->
+
+
 			</div>
 
 		</div>
 	</div>
-
+	</div>
+	</div>
 <?php get_footer(); ?>
     
 
