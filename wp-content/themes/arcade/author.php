@@ -5,6 +5,11 @@
       <div class="row align-items-center justify-content-center text-center pt-5">
         <div class="col-lg-6">
           <h1 class="heading text-white mb-3" data-aos="fade-up"> <?php echo get_the_archive_title(); ?> </h1>
+          <p class="text-white">
+          <?php
+			echo get_the_author_meta( 'description' );
+		   ?>			
+		 </p>          
         </div>
       </div>
     </div>
@@ -32,7 +37,7 @@
 								</div>
 							<?php endwhile; ?>
 				<?php else : ?>
-					No posts to be shown.
+					No posts found.
 				<?php endif; ?>
 
           <div class="row text-start pt-5 border-top">
@@ -46,62 +51,15 @@
                   'next_text' => __( '->', 'arcade' ),
                 ) );
                 ?>
-
-                <!-- <span>1</span>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <span>...</span>
-                <a href="#">15</a> -->
               </div>
             </div>
           </div>
-
         </div>
 
-        <div class="col-lg-4 sidebar">
+        <!-- <div class="col-lg-4 sidebar">
           <div class="sidebar-box">
-            <h3 class="heading">Popular Posts</h3>
-            <div class="post-entry-sidebar">
-              <ul>
-              <?php display_popular_posts( 4 ); ?>
-              </ul>
-            </div>
           </div>
-          <!-- END sidebar-box -->
-
-          <div class="sidebar-box">
-            <h3 class="heading">Categories</h3>
-            <?php 
-							if (function_exists('display_categories_in_sidebar')) {
-								display_categories_in_sidebar();
-							} else {
-								echo 'No categories found.';
-							}
-						?>
-          </div>
-          <!-- END sidebar-box -->
-
-          <div class="sidebar-box">
-            <!-- <h3 class="heading">Tags</h3> -->
-            
-            <!-- <ul class="tags">
-              <li><a href="#">Travel</a></li>
-              <li><a href="#">Adventure</a></li>
-              <li><a href="#">Food</a></li>
-              <li><a href="#">Lifestyle</a></li>
-              <li><a href="#">Business</a></li>
-              <li><a href="#">Freelancing</a></li>
-              <li><a href="#">Travel</a></li>
-              <li><a href="#">Adventure</a></li>
-              <li><a href="#">Food</a></li>
-              <li><a href="#">Lifestyle</a></li>
-              <li><a href="#">Business</a></li>
-              <li><a href="#">Freelancing</a></li>
-            </ul> -->
-          </div>
-
-        </div>
+            </div> -->
       </div>
     </div>
   </div>

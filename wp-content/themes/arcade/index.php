@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row align-items-center justify-content-center text-center pt-5">
         <div class="col-lg-6">
-          <h1 class="heading text-white mb-3" data-aos="fade-up"> INDEX <?php the_title(); ?> <?php echo get_the_archive_title(); ?> </h1>
+          <h1 class="heading text-white mb-3" data-aos="fade-up">  <?php echo get_the_archive_title(); ?> </h1>
         </div>
       </div>
     </div>

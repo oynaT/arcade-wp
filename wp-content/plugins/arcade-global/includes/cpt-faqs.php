@@ -64,3 +64,102 @@ class Arcade_Faqs {
 
 endif;
 $arcade_faqs = new arcade_Faqs();
+
+
+/**
+ * Register our custom taxonomy category
+ *
+ * @return void
+ */
+function register_faqs_category_taxonomy() {
+
+    $labels = array(
+		'name'              => _x( 'Categories', 'taxonomy general name', 'arcade' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'arcade' ),
+		'search_items'      => __( 'Search Categories', 'arcade' ),
+		'all_items'         => __( 'All Categories', 'arcade' ),
+		'parent_item'       => __( 'Parent Category', 'arcade' ),
+		'parent_item_colon' => __( 'Parent Category:', 'arcade' ),
+		'edit_item'         => __( 'Edit Category', 'arcade' ),
+		'update_item'       => __( 'Update Category', 'arcade' ),
+		'add_new_item'      => __( 'Add New Category', 'arcade' ),
+		'new_item_name'     => __( 'New Category Name', 'arcade' ),
+		'menu_name'         => __( 'Category', 'arcade' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+        'show_in_rest'      => true,
+		'rewrite'           => array( 'slug' => 'faqs-category' ),
+	);
+
+    register_taxonomy( 'faqs-category', 'faqs', $args );
+
+}
+
+add_action( 'init', 'register_faqs_category_taxonomy' );
+
+
+/**
+ * Portfolio Metabox main function where we'll register metaboxes
+ *
+ * @return void
+ */
+// function portfolio_details_metabox() {
+//     add_meta_box(
+//         'portfolio_details_metabox_id',       	// Unique ID for the metabox
+//         'Portfolio Details',                  	// Title of the metabox
+//         'portfolio_details_metabox_callback', 	// Callback function that renders the metabox
+//         'portfolio',        					// Post type where it will appear
+//         'side',                         		// Context: where on the screen (side, normal, or advanced)
+//         'default',                       		// Priority: default, high, low
+// 		array(
+// 			'__block_editor_compatible_meta_box' => true,
+// 			'__back_compat_meta_box'             => false,
+// 		)
+//     );
+// }
+// add_action( 'add_meta_boxes', 'portfolio_details_metabox' );
+
+
+// function portfolio_details_metabox_callback( $post ) {
+//     // Add a nonce field for security
+//     wp_nonce_field( 'portfolio_details_metabox_nonce_action', 'portfolio_details_metabox_nonce' );
+
+//     $portfolio_address = get_post_meta( $post->ID, 'portfolio_address', true );
+
+//     echo '<label for="portfolio_address">Address: </label>';
+//     echo '<input type="text" id="portfolio_address" name="portfolio_address" value="' . esc_attr( $portfolio_address ) . '" style="width: 100%;" />';
+// }
+
+
+// function your_custom_save_metabox( $post_id ) {
+//     // Check for nonce security
+//     if ( ! isset( $_POST['portfolio_details_metabox_nonce'] ) ||
+//          ! wp_verify_nonce( $_POST['portfolio_details_metabox_nonce'], 'portfolio_details_metabox_nonce_action' ) ) {
+//         return;
+//     }
+
+//     // Check for autosave or bulk edit
+//     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+//         return;
+//     }
+
+//     // Check user permissions
+//     if ( ! current_user_can( 'edit_post', $post_id ) ) {
+//         return;
+//     }
+
+// 	if ( isset( $_POST['_inline_edit'] ) ) {
+// 		return;
+// 	}
+
+//     if ( isset( $_POST['portfolio_address'] ) ) {
+//         update_post_meta( $post_id, 'portfolio_address', sanitize_text_field( $_POST['portfolio_address'] ) );
+//     }
+// }
+// add_action( 'save_post', 'your_custom_save_metabox' );

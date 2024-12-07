@@ -10494,3 +10494,13 @@ textarea {
       .site-footer .social li a:hover {
         background: #fff;
         color: #214252; }
+
+
+/*FAQ Acorderon */
+
+.accordion-item .accordion-button:not(.collapsed) {
+  color: #fafafa  !important;
+  background-color: #2a5063 !important;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}

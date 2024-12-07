@@ -19,7 +19,8 @@ get_header();
               <h1 class="mb-4"><?php the_title(); ?></h1>
               <div class="post-meta align-items-center text-center">
               <!-- <figure class="author-figure mb-0 me-3 d-inline-block"><img src="images/person_1.jpg" alt="Image" class="img-fluid"></figure> -->
-              <span class="d-inline-block mt-1">By <?php echo get_the_author_meta( 'display_name' ); ?></span>
+              <!-- <span class="d-inline-block mt-1">By <?php #echo get_the_author_meta( 'display_name' ); ?></span> -->
+              <span class="d-inline-block mt-1">By <a class="text-white" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"> - <?php the_author(); ?></a></span>
               <span>&nbsp;-&nbsp; <?php echo get_the_date(); ?></span>
             </div>
           </div>
