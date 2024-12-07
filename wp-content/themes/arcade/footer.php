@@ -20,7 +20,11 @@
 				</div> <!-- /.col-lg-4 -->
 				<div class="col-lg-4 ps-lg-5">
 					<div class="widget">
-						<h3 class="mb-4">Company</h3>
+					<?php dynamic_sidebar( 'footer-1' ); ?>
+
+					<?php dynamic_sidebar( 'footer-2' ); ?>
+
+						<!-- <h3 class="mb-4">Company</h3>
 						<ul class="list-unstyled float-start links">
 							<li><a href="#">About us</a></li>
 							<li><a href="#">Services</a></li>
@@ -36,7 +40,7 @@
 							<li><a href="#">Blog</a></li>
 							<li><a href="#">FAQ</a></li>
 							<li><a href="#">Creative</a></li>
-						</ul>
+						</ul> -->
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-4 -->
 			

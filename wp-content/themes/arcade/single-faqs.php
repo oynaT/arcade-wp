@@ -16,13 +16,9 @@
         </div>
 
         <div class="row">
-
             <div class="col-md-6 description text-lead">
                 <?php the_content(); ?>
             </div>
-
-
-
         </div>
 
     </div>

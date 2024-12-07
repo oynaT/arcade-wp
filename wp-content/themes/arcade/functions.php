@@ -95,3 +95,45 @@ add_action( 'after_setup_theme', 'arcade_register_nav_menus', 0 );
     }
     echo '</ul>';
 }
+
+
+/**
+ * Register sidebar widget
+ */
+function main_register_sidebars() {
+	register_sidebar(
+		array(
+			'id'            => 'footer-1',
+			'name'          => __( 'Footer Sidebar 1' ),
+			'description'   => __( 'A short description of the sidebar.' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+    register_sidebar(
+		array(
+			'id'            => 'footer-2',
+			'name'          => __( 'Footer Sidebar 2' ),
+			'description'   => __( 'A short description of the sidebar.' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+    register_sidebar(
+		array(
+			'id'            => 'first-sidebar',
+			'name'          => __( 'Page Sidebar 1' ),
+			'description'   => __( 'A short description of the sidebar.' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+
+}
+add_action( 'widgets_init', 'main_register_sidebars' );

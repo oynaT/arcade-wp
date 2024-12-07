@@ -83,9 +83,9 @@
 					<!-- END sidebar-box -->
 
 					<div class="sidebar-box">
-						<h3 class="heading">Tags</h3>
-						<ul class="tags">
-							<li><a href="#">Travel</a></li>
+						<!-- <h3 class="heading">Tags</h3> -->
+						<!-- <ul class="tags"></ul>  -->
+						<!-- 	<li><a href="#">Travel</a></li>
 							<li><a href="#">Adventure</a></li>
 							<li><a href="#">Food</a></li>
 							<li><a href="#">Lifestyle</a></li>
@@ -97,7 +97,7 @@
 							<li><a href="#">Lifestyle</a></li>
 							<li><a href="#">Business</a></li>
 							<li><a href="#">Freelancing</a></li>
-						</ul>
+						-->
 					</div>
 
 				</div>

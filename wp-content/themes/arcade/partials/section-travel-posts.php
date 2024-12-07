@@ -46,13 +46,6 @@
                                 <h2><?php the_title(); ?></h2>
                             </div>
                         </a>
-                        <a href="<?php the_permalink(); ?>" class="hentry v-height img-2 ms-auto float-end gradient">
-                            <div class="featured-img" style="background-image: url('<?php echo get_the_post_thumbnail_url(null, 'medium'); ?>');"></div>
-                            <div class="text text-sm">
-                                <span><?php echo get_the_date(); ?></span>
-                                <h2><?php the_title(); ?></h2>
-                            </div>
-                        </a>
             <?php
                 if ($counter == 4) : // Затваряне на двуколонния layout след четвъртия пост
                     ?>
