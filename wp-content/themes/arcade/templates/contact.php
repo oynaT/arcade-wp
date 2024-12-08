@@ -11,7 +11,7 @@
 		<div class="container">
 			<div class="row align-items-center justify-content-center text-center pt-5">
 				<div class="col-lg-6">
-					<h1 class="heading text-white mb-3" data-aos="fade-up">Contact Us</h1>
+					<h1 class="heading text-white mb-3" data-aos="fade-up"><?php the_title(); ?> </h1>
 				</div>
 			</div>
 		</div>
@@ -26,28 +26,41 @@
 						<div class="address mt-2">
 							<i class="icon-room"></i>
 							<h4 class="mb-2">Location:</h4>
-							<p>43 Raymouth Rd. Baltemoer,<br> London 3910</p>
+							<?php $address = get_post_meta(get_the_ID(), 'address', true);
+								if ( $address ) {
+									echo '<p>' .  $address  . '</p>';
+								}
+							?>
 						</div>
 
 						<div class="open-hours mt-4">
 							<i class="icon-clock-o"></i>
 							<h4 class="mb-2">Open Hours:</h4>
-							<p>
-								Sunday-Friday:<br>
-								11:00 AM - 2300 PM
-							</p>
+							<?php $work_time = get_post_meta(get_the_ID(), 'work_time', true);
+								if ( $work_time ) {
+									echo '<p>' .  $work_time  . '</p>';
+								}
+							?>
 						</div>
 
 						<div class="email mt-4">
 							<i class="icon-envelope"></i>
 							<h4 class="mb-2">Email:</h4>
-							<p>info@Untree.co</p>
+							<?php $email = get_post_meta(get_the_ID(), 'email', true);
+								if ( $email ) {
+									echo '<p>' .  $email  . '</p>';
+								}
+							?>
 						</div>
 
 						<div class="phone mt-4">
 							<i class="icon-phone"></i>
 							<h4 class="mb-2">Call:</h4>
-							<p>+1 1234 55488 55</p>
+							<?php $phone_number = get_post_meta(get_the_ID(), 'phone_number', true);
+								if ( $phone_number ) {
+									echo '<p>' .  $phone_number  . '</p>';
+								}
+							?>
 						</div>
 
 					</div>

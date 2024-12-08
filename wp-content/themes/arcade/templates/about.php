@@ -11,7 +11,7 @@
 			<div class="row same-height justify-content-center">
 				<div class="col-md-6">
 					<div class="post-entry text-center">
-						<h1 class="mb-4"><?php the_title(); ?></h1>
+						<h1 class="mb-4" data-aos="fade-up"><?php the_title(); ?></h1>
 					</div>
 				</div>
 			</div>
