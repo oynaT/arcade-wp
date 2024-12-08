@@ -19,7 +19,7 @@
                   <div id="post-id-<?php the_ID(); ?>" <?php post_class( 'blog-entry d-flex blog-entry-search-item' ) ?>>
                   <?php if ( has_post_thumbnail() ) : ?>
                     <a href="<?php echo get_the_permalink(); ?>" class="img-link me-4">
-                      <?php the_post_thumbnail( 'post-thumbnail', [ 'class' => 'img-fluid', 'alt' => 'Image' , 'title' => 'Feature image' ] ); ?>
+                      <?php the_post_thumbnail( 'post-thumbnail', [ 'class' => 'img-fluid custom-thumbnail', 'alt' => 'Image' , 'title' => 'Feature image' ] ); ?>
                     </a>
                   <?php endif; ?>
                   <div>

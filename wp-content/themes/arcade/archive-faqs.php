@@ -49,7 +49,7 @@
                         <div class="custom-pagination">
                             <?php
                             the_posts_pagination( array(
-                                'mid_size'  => 4,
+                                'mid_size'  => 2,
                                 'prev_text' => __( '<-', 'arcade' ),
                                 'next_text' => __( '->', 'arcade' ),
                             ) );
@@ -59,26 +59,11 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 sidebar">
-                <div class="sidebar-box">
-                    <h3 class="heading">Popular Posts</h3>
-                    <div class="post-entry-sidebar">
-                        <ul>
-                            <?php display_popular_posts( 4 ); ?>
-                        </ul>
-                    </div>
-                </div>
-                <!-- END sidebar-box -->
-
-                <div class="sidebar-box">
-                    <h3 class="heading">Categories</h3>
-                    <?php 
-                    if (function_exists('display_categories_in_sidebar')) {
-                        display_categories_in_sidebar();
-                    } else {
-                        echo 'No categories found.';
-                    }
-                    ?>
+            <div class="col-lg-4 sidebar">       
+                   <div class="sidebar-box">
+                      <h3 class="heading">FAQ Categories</h3>
+                      <?php display_faq_categories_in_sidebar(); ?>
+                  </div>
                 </div>
                 <!-- END sidebar-box -->
             </div>

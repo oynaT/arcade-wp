@@ -9,7 +9,8 @@
 	<section class="section bg-light">
 		<div class="container">
 			<div class="row align-items-stretch retro-layout">
-				<div class="col-md-4">
+			<?php get_template_part('partials/section-random-posts', 'section'); ?>
+				<!-- <div class="col-md-4">
 					<a href="single.html" class="h-entry mb-30 v-height gradient">
 
 						<div class="featured-img" style="background-image: url('http://localhost/arcade/wp-content/themes/blogy/images/img_2_horizontal.jpg');"></div>
@@ -59,7 +60,7 @@
 							<h2>Thought you loved Python? Wait until you meet Rust 1</h2>
 						</div>
 					</a>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -83,7 +84,7 @@
 	<section class="section posts-entry posts-entry-sm bg-light">
 		<div class="container">
 			 <div class="row">
-				<?php get_template_part( 'partials/more-blog-posts' , 'section'  ); ?> 
+				<?php get_template_part( 'partials/more-blog-posts' , 'section' ); ?> 
 			</div> 		
 		</div>
 	</section>
@@ -140,5 +141,3 @@
 	</div>
 	</div>
 <?php get_footer(); ?>
-    
-

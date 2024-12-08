@@ -13,15 +13,10 @@ function arcade_enqueue_assets() {
 	wp_enqueue_style( 'arcade-main-style', get_stylesheet_directory_uri() . '/css/style.css', array(), ARCADE_THEME_VER );
 	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
 	//wp_enqueue_script( 'plugins-js', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
+
+	wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', [], null, true);
 }
 add_action( 'wp_enqueue_scripts', 'arcade_enqueue_assets' );
-
-
-function enqueue_bootstrap() {
-   //wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
-    wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', [], null, true);
-}
-add_action('wp_enqueue_scripts', 'enqueue_bootstrap');
 
 
 
@@ -93,7 +88,7 @@ add_action( 'after_setup_theme', 'arcade_register_nav_menus', 0 );
  function display_categories_in_sidebar() {
     $categories = get_categories( array(
         'orderby' => 'name',
-        'order'   => 'ASC'
+        'order'   => 'ASC',
     ) );
 
     echo '<ul class="categories">';
@@ -103,6 +98,42 @@ add_action( 'after_setup_theme', 'arcade_register_nav_menus', 0 );
     }
     echo '</ul>';
 }
+
+/**
+ * Display FAQS category in sidebar
+ */
+
+function display_faq_categories_in_sidebar() {
+    $faq_categories = get_terms( array(
+        'taxonomy'   => 'faqs-category',
+        'orderby'    => 'name',
+        'order'      => 'ASC',
+        'hide_empty' => true,
+    ) );
+
+    if ( ! empty( $faq_categories ) && ! is_wp_error( $faq_categories ) ) {
+        echo '<ul class="categories">';
+        foreach ( $faq_categories as $faq_category ) {
+            echo '<li>
+                <a href="' . esc_url( get_term_link( $faq_category ) ) . '">' 
+                . esc_html( $faq_category->name ) . 
+                ' <span>(' . $faq_category->count . ')</span>
+                </a>
+            </li>';
+        }
+        echo '</ul>';
+    } else {
+        echo '<p>No FAQ categories found.</p>';
+    }
+}
+
+function include_faqs_in_category_archives( $query ) {
+    if ( !is_admin() && $query->is_main_query() && is_category() ) {
+        // Include both 'post' and 'faqs' in the query
+        $query->set( 'post_type', array( 'post', 'faqs' ) );
+    }
+}
+add_action( 'pre_get_posts', 'include_faqs_in_category_archives' );
 
 
 /**

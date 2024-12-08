@@ -18,7 +18,7 @@ $populate_posts_query = new WP_Query( $populate_posts_args );
               <?php while( $populate_posts_query->have_posts() ) : $populate_posts_query->the_post(); ?>
                 <li>
                 <a href="<?php echo get_the_permalink(); ?>">
-                   <?php the_post_thumbnail( 'thumbnail', [ 'class' => 'me-4 rounded', 'title' => 'Feature image' , 'alt' => 'Image placeholder' ] ); ?>
+                   <?php the_post_thumbnail( 'thumbnail', [ 'class' => 'me-4 rounded custom-thumbnail', 'title' => 'Feature image' , 'alt' => 'Image placeholder' ] ); ?>
                     <div class="text">
                       <h4><?php echo get_the_title(); ?></h4>
                       <div class="post-meta">

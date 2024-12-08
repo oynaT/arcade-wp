@@ -46,15 +46,9 @@
 
 				<div class="col-lg-4 sidebar">
 					<div class="sidebar-box">
-						<h3 class="heading">Popular Posts</h3>
-						<div class="post-entry-sidebar">
-							<ul>
-							<?php display_popular_posts( 3 ); ?>
-							</ul>
-						</div>
+							<h3 class="heading">FAQ Categories</h3>
+							<?php display_faq_categories_in_sidebar(); ?>
 					</div>
-					<!-- END sidebar-box -->
-
 					<div class="sidebar-box">
 						<h3 class="heading">Categories</h3>
 						<?php 
@@ -65,7 +59,6 @@
 							}
 						?>
 					</div>
-					<!-- END sidebar-box -->
 				</div>
 			</div>
 		</div>

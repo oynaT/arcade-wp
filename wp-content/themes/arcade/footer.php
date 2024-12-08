@@ -46,7 +46,7 @@
 											<a href="<?php the_permalink(); ?>">
 												<?php
 												if ( has_post_thumbnail() ) {
-													the_post_thumbnail( 'thumbnail', array( 'class' => 'me-4 rounded', 'alt' => esc_attr( get_the_title() ) ) );
+													the_post_thumbnail( 'thumbnail', array( 'class' => 'me-4 rounded custom-thumbnail', 'alt' => esc_attr( get_the_title() )) );
 												} ?>
 												<div class="text">
 													<h4><?php the_title(); ?></h4>
