@@ -15,5 +15,4 @@ if ( ! defined( 'ARCADE_PLUGIN_ASSETS_URL' ) ) {
 
 
 require 'includes/cpt-faqs.php';
-
-// require 'includes/functions.php';
+require 'includes/functions.php';

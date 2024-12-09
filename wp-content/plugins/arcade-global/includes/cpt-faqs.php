@@ -105,61 +105,67 @@ add_action( 'init', 'register_faqs_category_taxonomy' );
 
 
 /**
- * Portfolio Metabox main function where we'll register metaboxes
+ * Register the meta box for FAQ video (embed or URL).
  *
  * @return void
  */
-// function portfolio_details_metabox() {
-//     add_meta_box(
-//         'portfolio_details_metabox_id',       	// Unique ID for the metabox
-//         'Portfolio Details',                  	// Title of the metabox
-//         'portfolio_details_metabox_callback', 	// Callback function that renders the metabox
-//         'portfolio',        					// Post type where it will appear
-//         'side',                         		// Context: where on the screen (side, normal, or advanced)
-//         'default',                       		// Priority: default, high, low
-// 		array(
-// 			'__block_editor_compatible_meta_box' => true,
-// 			'__back_compat_meta_box'             => false,
-// 		)
-//     );
-// }
-// add_action( 'add_meta_boxes', 'portfolio_details_metabox' );
+function register_faq_video_meta_box() {
+    add_meta_box(
+        'faq_video',                 // Meta box ID
+        'FAQ Video (Embed or URL)',  // Meta box title
+        'faq_video_meta_box_callback', // Callback function for displaying the meta box
+        'faqs',                       // Post type (CPT)
+        'normal',                     // Position of the meta box
+        'default',                    // Priority
+        array(
+            '__block_editor_compatible_meta_box' => true,
+            '__back_compat_meta_box'             => false,
+        )
+    );
+}
+add_action( 'add_meta_boxes', 'register_faq_video_meta_box' );
 
+/**
+ * Callback function to display the FAQ video meta box.
+ *
+ * @param WP_Post $post The current post object.
+ * @return void
+ */
+function faq_video_meta_box_callback( $post ) {
+    // Adding a nonce for security
+    wp_nonce_field( 'faq_video_nonce_action', 'faq_video_nonce_name' );
+    
+    // Get the value of the meta field
+    $faq_video = get_post_meta( $post->ID, '_faq_video', true );
 
-// function portfolio_details_metabox_callback( $post ) {
-//     // Add a nonce field for security
-//     wp_nonce_field( 'portfolio_details_metabox_nonce_action', 'portfolio_details_metabox_nonce' );
+    // Display the input field for embed code or URL
+    echo '<textarea name="faq_video" rows="3" style="width:100%;">' . esc_textarea( $faq_video ) . '</textarea>';
+}
 
-//     $portfolio_address = get_post_meta( $post->ID, 'portfolio_address', true );
+/**
+ * Save the value of the FAQ video meta field.
+ *
+ * @param int $post_id The ID of the post being saved.
+ * @return void
+ */
+function save_faq_video_meta( $post_id ) {
+    // Check for nonce security
+    if ( ! isset( $_POST['faq_video_nonce_name'] ) || 
+        ! wp_verify_nonce( $_POST['faq_video_nonce_name'], 'faq_video_nonce_action' ) ) {
+        return;
+    }
 
-//     echo '<label for="portfolio_address">Address: </label>';
-//     echo '<input type="text" id="portfolio_address" name="portfolio_address" value="' . esc_attr( $portfolio_address ) . '" style="width: 100%;" />';
-// }
+    // Check if post is being autosaved
+    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return;
 
+    // Check if the user has permission to edit the post
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
 
-// function your_custom_save_metabox( $post_id ) {
-//     // Check for nonce security
-//     if ( ! isset( $_POST['portfolio_details_metabox_nonce'] ) ||
-//          ! wp_verify_nonce( $_POST['portfolio_details_metabox_nonce'], 'portfolio_details_metabox_nonce_action' ) ) {
-//         return;
-//     }
-
-//     // Check for autosave or bulk edit
-//     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-//         return;
-//     }
-
-//     // Check user permissions
-//     if ( ! current_user_can( 'edit_post', $post_id ) ) {
-//         return;
-//     }
-
-// 	if ( isset( $_POST['_inline_edit'] ) ) {
-// 		return;
-// 	}
-
-//     if ( isset( $_POST['portfolio_address'] ) ) {
-//         update_post_meta( $post_id, 'portfolio_address', sanitize_text_field( $_POST['portfolio_address'] ) );
-//     }
-// }
-// add_action( 'save_post', 'your_custom_save_metabox' );
+    // Save the meta field value
+    if ( isset( $_POST['faq_video'] ) ) {
+        update_post_meta( $post_id, '_faq_video', sanitize_textarea_field( $_POST['faq_video'] ) );
+    }
+}
+add_action( 'save_post', 'save_faq_video_meta' );

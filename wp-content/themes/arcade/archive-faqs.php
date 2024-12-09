@@ -59,11 +59,14 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 sidebar">       
+                <div class="col-lg-4 sidebar">       
                    <div class="sidebar-box">
                       <h3 class="heading">FAQ Categories</h3>
                       <?php display_faq_categories_in_sidebar(); ?>
                   </div>
+                  <div class="sidebar-box">
+                  <?php echo do_shortcode( '[faq_info id="169"]' ); ?>
+                </div>    
                 </div>
                 <!-- END sidebar-box -->
             </div>

@@ -45,11 +45,29 @@ get_header();
         <div class="col-md-12 col-lg-8 main-content">
           <div class="post-content-body">
           <?php the_content() ?>
+
+             <?php $faq_video = get_post_meta( get_the_ID(), '_faq_video', true);
+								if ( !empty($faq_video)  ) {
+                  echo '<div class="faq-video">';
+                 
+                  if ( preg_match( '/^(https?:\/\/(?:www\.)?(youtube\.com|vimeo\.com)\/)/', $faq_video ) ) {
+                    // Това е URL на видео
+                    echo wp_oembed_get( $faq_video );
+                   } else {
+                    // Ако не е URL
+                    echo wp_kses_post( $faq_video );  // Въвеждаме директно ембед кода
+                  }
+                  echo '</div>';
+								}
+							?>
+
           </div>
           <!-- <div class="pt-4" style="display:flex">
             Categories: <?php #the_category(); ?> &nbsp;
             <?php #the_tags(); ?>
           </div> -->
+
+
         </div>
         <?php endwhile; ?>
         

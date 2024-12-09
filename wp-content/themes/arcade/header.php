@@ -54,7 +54,7 @@
 				<div class="site-navigation">
 					<div class="row g-0 align-items-center">
 						<div class="col-2">
-							<a href="<?php echo get_home_url( '/' ); ?>" class="logo m-0 float-start"><?php _e('Blogy', 'arcade');?><span class="text-primary">.</span></a>
+							<a href="<?php echo get_home_url( '/' ); ?>" class="logo m-0 float-start"><?php _e('Arcade', 'arcade');?><span class="text-primary">.</span></a>
 						</div>
 						<div class="col-8 text-center">
 							<form action="#" class="search-form d-inline-block d-lg-none">

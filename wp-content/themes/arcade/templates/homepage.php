@@ -103,6 +103,15 @@
 		</div>
 	</section>
 
+	<section class="section bg-light">
+		<div class="container">
+			<div class="row">
+				<?php echo do_shortcode( '[faq_info id="170"]' ); ?>
+				<?php echo do_shortcode( '[faq_info id="169"]' ); ?>
+			</div>
+		</div>
+	</section>	
+
 	<section class="section">
 		<div class="container">
 
@@ -114,12 +123,14 @@
 			</div>
 			<div class="row">
 			
-			<?php get_template_part('partials/section-politics-posts' , 'section'); ?>
+				<?php get_template_part('partials/section-politics-posts' , 'section'); ?>
+			
+			</div>
 			
 		</div>
-		
-		</div>
 	</section>
+
+
 
 	<div class="section bg-light">
 		<div class="container">
