@@ -91,7 +91,7 @@
     	</div>
     </div>
 
-
+<!-- 
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/tiny-slider.js"></script>
 
@@ -101,7 +101,7 @@
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/glightbox.min.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/navbar.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/counter.js"></script>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/custom.js"></script>
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/custom.js"></script> -->
 	
 	<?php wp_footer(); ?>
 	</body>

@@ -13,22 +13,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/fonts/icomoon/style.css">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/fonts/flaticon/font/flaticon.css">
-
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/tiny-slider.css">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/aos.css">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/glightbox.min.css">
-	<!-- <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css"> -->
-
-	<!-- <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootsrap.css">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootsrap-grid.css">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootsrap-reboot.css">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap-utilities.css"> -->
-
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/flatpickr.min.css">
 
 	<!-- <title>Blogy &mdash; Free Bootstrap 5 Website Template by Untree.co</title> -->
     
@@ -37,7 +22,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'test-class' ); ?>>
+<body <?php body_class( 'arcade-class' ); ?>>
 
 	<div class="site-mobile-menu site-navbar-target">
 		<div class="site-mobile-menu-header">

@@ -4,21 +4,39 @@ if ( ! defined( 'ARCADE_THEME_VER' ) ) {
 	define( 'ARCADE_THEME_VER', '1.0.5' );
 }
 
+//activate supports
 add_theme_support('menus');
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails');
 add_post_type_support( 'excerpt', array() );
 
-function arcade_enqueue_assets() {
-	wp_enqueue_style( 'arcade-main-style', get_stylesheet_directory_uri() . '/css/style.css', array(), ARCADE_THEME_VER );
-	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
-	//wp_enqueue_script( 'plugins-js', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
 
+function arcade_enqueue_assets() {
+    // Load all CSS files
+	wp_enqueue_style( 'arcade-main-style', get_stylesheet_directory_uri() . '/css/style.css', array(), ARCADE_THEME_VER );
+	
+    wp_enqueue_style( 'arcade-icomoon-style', get_stylesheet_directory_uri() . '/fonts/icomoon/style.css', array(), ARCADE_THEME_VER );
+    wp_enqueue_style( 'arcade-flaticon-style', get_stylesheet_directory_uri() . '/fonts/flaticon/font/flaticon.css', array(), ARCADE_THEME_VER );
+    wp_enqueue_style( 'arcade-tiny-slider-style', get_stylesheet_directory_uri() . '/css/tiny-slider.css', array(), ARCADE_THEME_VER );
+    wp_enqueue_style( 'arcade-aos-style', get_stylesheet_directory_uri() . '/css/aos.css', array(), ARCADE_THEME_VER );
+    wp_enqueue_style( 'arcade-glightbox-min-style', get_stylesheet_directory_uri() . '/css/glightbox.min.css', array(), ARCADE_THEME_VER );
+    wp_enqueue_style( 'arcade-flatpickr-min-style', get_stylesheet_directory_uri() . '/css/flatpickr.min.css', array(), ARCADE_THEME_VER );
+
+    // Load all JavaScript files
+    wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
 	wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', [], null, true);
+    wp_enqueue_script( 'bootstrap.bundle.min.js', get_stylesheet_directory_uri() . '/js/bootstrap.bundle.min.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
+
+    wp_enqueue_script( 'tiny-slider.js', get_stylesheet_directory_uri() . '/js/tiny-slider.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
+    wp_enqueue_script( 'flatpickr.min.js', get_stylesheet_directory_uri() . '/js/flatpickr.min.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
+    wp_enqueue_script( 'aos.js', get_stylesheet_directory_uri() . '/js/aos.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
+
+    wp_enqueue_script( 'glightbox.min.js', get_stylesheet_directory_uri() . '/js/glightbox.min.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
+    wp_enqueue_script( 'navbar.js', get_stylesheet_directory_uri() . '/js/navbar.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
+    wp_enqueue_script( 'counter.js', get_stylesheet_directory_uri() . '/js/counter.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
+    wp_enqueue_script( 'custom.js', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
 }
 add_action( 'wp_enqueue_scripts', 'arcade_enqueue_assets' );
-
-
 
 /**
  * Display popular post number.
