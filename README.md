@@ -38,3 +38,5 @@ This project is a Blog website built with WordPress using a custom theme based o
 - **Footer Widgets**: Two widget sidebars are registered in the footer.
 
 - **Dynamic Menu**: A custom dynamic menu is registered and displayed in the theme.
+
+- **Demo Server**: A live demo of the project is hosted on a server and can be accessed at [https://arcade.webbies.bg/](https://arcade.webbies.bg/) for testing and exploration.
