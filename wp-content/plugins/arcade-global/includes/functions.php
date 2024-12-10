@@ -63,3 +63,50 @@ function display_faqs_info( $atts ) {
 add_shortcode( 'faq_info', 'display_faqs_info' );
 
 
+/**
+ * Enqueues scripts and localizes AJAX settings for the plugin.
+ *
+ * This function is responsible for loading the JavaScript assets needed for the plugin's functionality
+ * and passing the AJAX URL to the script, enabling AJAX requests to the WordPress admin interface.
+ *
+ * @return void
+ */
+
+function arcade_plugin_enqueue_assets() {
+    wp_enqueue_script(
+        'ajax-script',
+        plugins_url( '../assets/scripts/scripts.js', __FILE__ ),
+        array('jquery'),
+        '1.0',
+        true
+    );
+
+    wp_localize_script(
+        'ajax-script',
+        'my_ajax_object',
+        array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
+    );
+}
+add_action( 'wp_enqueue_scripts', 'arcade_plugin_enqueue_assets' );
+
+
+/**
+ * Fucntion mark as important and update in post meta table
+ */
+
+function arcade_mark_faq_important() {
+    // check is ID is send
+    if ( ! isset( $_POST['faq_id'] ) ) {
+        wp_send_json_error();
+    }
+
+    $faq_id = intval( $_POST['faq_id'] );
+
+    // Save "mark important" in post_meta
+    update_post_meta( $faq_id, '_faq_important', 1 );
+
+    wp_send_json_success();
+}
+
+add_action( 'wp_ajax_nopriv_arcade_mark_faq_important', 'arcade_mark_faq_important' );
+add_action( 'wp_ajax_arcade_mark_faq_important', 'arcade_mark_faq_important' );

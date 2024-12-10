@@ -33,7 +33,8 @@
                                         <a href="<?php echo get_permalink(); ?>" class="btn btn-sm btn-primary">
                                             Read More
                                         </a>
-                                    </p>
+                                        <button class="mark-important" data-id="<?php echo get_the_ID(); ?>">Mark as Important</button>
+                                    </p> 
                                 </div>
                             </div>
                         </div>

@@ -23,8 +23,8 @@ function arcade_enqueue_assets() {
     wp_enqueue_style( 'arcade-flatpickr-min-style', get_stylesheet_directory_uri() . '/css/flatpickr.min.css', array(), ARCADE_THEME_VER );
 
     // Load all JavaScript files
-    wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
-	wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', [], null, true);
+    //wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
+	wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', [], null, true);
     wp_enqueue_script( 'bootstrap.bundle.min.js', get_stylesheet_directory_uri() . '/js/bootstrap.bundle.min.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
 
     wp_enqueue_script( 'tiny-slider.js', get_stylesheet_directory_uri() . '/js/tiny-slider.js', array( 'jquery' ), ARCADE_THEME_VER, array( 'in_footer' => true ) );
